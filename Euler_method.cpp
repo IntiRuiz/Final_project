@@ -29,9 +29,9 @@ int main (void)
   x0 = 0.994;
   y0 = 0;
 
-  for (int ii=1; ii<= 24000; ii++)
-    {euler (h, p0, u0, y0, x0);
-      std::cout<<(h*ii)<<'\t'<<p0<<'\t'<<u0<<'\t'<<y0<<'\t'<<'\t'<<x0<<'\n';}
+    for (int ii=1; ii<= 24000; ii++)
+      {euler (h, p0, u0, y0, x0);
+	std::cout<<(h*ii)<<'\t'<<p0<<'\t'<<(h*ii)<<'\t'<<(h*ii)<<'\t'<<'\t'<<x0<<'\n';}
   
   return 0;
 }
@@ -43,10 +43,10 @@ double g1 (double u)
 {return u;}
 
 double g2 (double p, double u, double x, double y)
-{return  (x-(2*p))-(((1-miu)*(x+miu))/(pow (sqrt(pow((x+miu),2)+pow(y,2)),3)))-((miu*(x-1+miu))/(pow (sqrt(pow((x-1+miu),2)+pow(y,2)),3)));}
+{return  (x-(2*p))-(((1-miu)*(x+miu))/(std::pow (std::sqrt(std::pow((x+miu),2)+std::pow(y,2)),3)))-((miu*(x-1+miu))/(std::pow (std::sqrt(std::pow((x-1+miu),2)+std::pow(y,2)),3)));}
 
 double f2 (double p, double u, double x, double y)
-{return (y-(2*u))-(((1-miu)*y)/(pow (sqrt(pow((x+miu),2)+pow(y,2)),3)))-((miu*y)/(pow (sqrt(pow((x-1+miu),2)+pow(y,2)),3)));}
+{return (y-(2*u))-(((1-miu)*y)/(std::pow (std::sqrt(std::pow((x+miu),2)+std::pow(y,2)),3)))-((miu*y)/(std::pow (std::sqrt(std::pow((x-1+miu),2)+std::pow(y,2)),3)));}
 
 void euler (double h, double &p0, double &u0, double &y0, double &x0)
 {
