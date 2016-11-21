@@ -20,10 +20,11 @@ int main(void)
   vx=0.0;
   y=0.0;
   vy=-2.0015851063790825224053786224;
-  for(time=0.0; time<=T; time+=delta)
+  for(time=0.0; time<=2*T; time+=delta)
     {
-      std::cout<<x<<"\t"<<vx<<std::endl;
       rk4(time, delta, x, vx, y, vy);
+      std::cout<<x<<"\t"<<vx<<std::endl;
+      
     }
   return 0;
 }

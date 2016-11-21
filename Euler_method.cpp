@@ -22,8 +22,8 @@ int main (void)
   y0 = 0.0;
   p0 = -2.0015851063790825224053786224;
   h = T/24000;
-  
-  for (int ii = 1;ii<=24000;ii++){
+  std::cout<<x0<<"\t"<<u0<<std::endl;
+  for (int ii = 0;ii<=24000;ii++){
     euler (h,p0,u0,y0,x0);
     std::cout<<x0<<"\t"<<u0<<std::endl;}
   
